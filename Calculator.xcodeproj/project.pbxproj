@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F03C60F1F01849B0027868F /* UIButtonAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F03C60E1F01849B0027868F /* UIButtonAttributes.swift */; };
 		8F1D6C101EFF161B00200646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1D6C0F1EFF161B00200646 /* AppDelegate.swift */; };
 		8F1D6C121EFF161B00200646 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1D6C111EFF161B00200646 /* ViewController.swift */; };
 		8F1D6C151EFF161B00200646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F1D6C131EFF161B00200646 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F03C60E1F01849B0027868F /* UIButtonAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonAttributes.swift; sourceTree = "<group>"; };
 		8F1D6C0C1EFF161B00200646 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F1D6C0F1EFF161B00200646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F1D6C111EFF161B00200646 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 		8F1D6C211EFF16C200200646 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8F03C60E1F01849B0027868F /* UIButtonAttributes.swift */,
 				8F1D6C0F1EFF161B00200646 /* AppDelegate.swift */,
 				8F1D6C161EFF161B00200646 /* Assets.xcassets */,
 				8F1D6C181EFF161B00200646 /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F03C60F1F01849B0027868F /* UIButtonAttributes.swift in Sources */,
 				8F1D6C231F0005E500200646 /* CalculatorBrain.swift in Sources */,
 				8F1D6C121EFF161B00200646 /* ViewController.swift in Sources */,
 				8F1D6C101EFF161B00200646 /* AppDelegate.swift in Sources */,
@@ -316,6 +320,7 @@
 				8F1D6C201EFF161B00200646 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

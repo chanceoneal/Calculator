@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 	// MARK: Properties
 	@IBOutlet weak var display: UILabel!
+	@IBOutlet weak var previousOperations: UILabel!
 	var userIsTyping = false
 	var displayValue: Double {
 		get {
@@ -26,10 +27,18 @@ class ViewController: UIViewController {
 	@IBAction func touchDigit(_ sender: UIButton) {
 		let digit = sender.currentTitle!
 		if userIsTyping {
-			let textCurrentlyInDisplay = display.text!
-			display.text = textCurrentlyInDisplay + digit
+			if digit != "." || (digit == "." && !display.text!.contains(".")) {
+				let textCurrentlyInDisplay = display.text!
+//				let previousOperationsInDisplay = previousOperations.text!
+				display.text = textCurrentlyInDisplay + digit
+//				previousOperations.text = previousOperationsInDisplay + digit
+			}
 		} else {
-			display.text = digit
+			if digit == "." {
+				display.text = "0" + digit
+			} else {
+				display.text = digit
+			}
 			userIsTyping = true
 		}
 	}
@@ -40,14 +49,34 @@ class ViewController: UIViewController {
 		if userIsTyping {
 			brain.setOperand(displayValue)
 			userIsTyping = false
+			let previousOperationsInDisplay = previousOperations.text!
+			previousOperations.text = previousOperationsInDisplay + String(displayValue)
+
 		}
+		
 		if let mathematicalSymbol = sender.currentTitle {
 			brain.performOperation(mathematicalSymbol)
+			let previousOperationsInDisplay = previousOperations.text!
+			previousOperations.text = previousOperationsInDisplay + mathematicalSymbol
 		}
 		
 		if let result = brain.result {
-			displayValue = result
+			if sender.currentTitle == "C" {
+				display.text = "0"
+				previousOperations.text = " "
+			} else {
+				displayValue = result
+			}
 		}
+		
+		if brain.pendingResult {
+			let previousOperationsInDisplay = previousOperations.text!
+			previousOperations.text = previousOperationsInDisplay + "..."
+		}
+//		} else {
+//			let previousOperationsInDisplay = previousOperations.text!
+//			previousOperations.text = previousOperationsInDisplay + "="
+//		}
 	}
 	
 	
